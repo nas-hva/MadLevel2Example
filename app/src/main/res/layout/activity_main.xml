@@ -31,7 +31,8 @@
             android:layout_weight="1"
             android:ems="10"
             android:hint="@string/et_reminder"
-            android:inputType="textPersonName" />
+            android:inputType="textPersonName"
+            android:autofillHints="hint" />
 
         <Button
             android:id="@+id/btnAddReminder"

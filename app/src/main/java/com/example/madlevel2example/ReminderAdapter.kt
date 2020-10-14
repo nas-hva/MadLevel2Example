@@ -9,6 +9,15 @@ import com.example.madlevel2example.databinding.ItemReminderBinding
 class ReminderAdapter(private val reminders: List<Reminder>) :
     RecyclerView.Adapter<ReminderAdapter.ViewHolder>() {
 
+    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+
+        val binding = ItemReminderBinding.bind(itemView)
+
+        fun databind(reminder: Reminder) {
+            binding.tvReminder.text = reminder.reminderText
+        }
+    }
+
     /**
      * Creates and returns a ViewHolder object, inflating a standard layout called simple_list_item_1.
      */
@@ -31,15 +40,5 @@ class ReminderAdapter(private val reminders: List<Reminder>) :
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         holder.databind(reminders[position])
     }
-
-    inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-
-        val binding = ItemReminderBinding.bind(itemView)
-
-        fun databind(reminder: Reminder) {
-            binding.tvReminder.text = reminder.reminderText
-        }
-    }
-
 
 }
