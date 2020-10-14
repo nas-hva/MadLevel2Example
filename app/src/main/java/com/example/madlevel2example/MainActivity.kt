@@ -7,7 +7,11 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
+        data class Reminder(
+            var reminderText: String
 
-        //** Fixed forced close error
+            //** Fixed forced close error
+
+        )
     }
 }
